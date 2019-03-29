@@ -2,18 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// Parent Component = Board
+// -> Child Component = Square
 
+// Lone Square Component
+//  - This square component renders a single button, where the X or O will go.
 class Square extends React.Component {
   render () {
     return (
-      <button className="square">{/* TODO */}</button>
+      <button className="square">{this.props.value}</button> /* Passed in prop from parent component */
+      // Passing in props is how information flows in React Apps, from parents to children.
     );
   };
 };
 
+// Entire Board Component
+//  - This board component renders 9 squares (3 in each row).
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />; /* value = prop, can pass this to the child component */
   };
 
   render() {
@@ -42,6 +49,8 @@ class Board extends React.Component {
   };
 };
 
+// Game Mechanics Components
+//  - This game component renders the board with values in the placeholder that we'll modify.
 class Game extends React.Component {
   render () {
     return (
