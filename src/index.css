@@ -54,6 +54,20 @@ ol, ul {
     width: 75px;
   }
 }
+@media (max-width: 428px) {
+  .square {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (max-width: 353px) {
+  .square {
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+  }
+}
 
 .square:focus {
   outline: none;
@@ -70,4 +84,9 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+@media (max-width: 353px) {
+  .game-info {
+    margin-left: 10px;
+  }
 }
